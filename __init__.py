@@ -8,3 +8,4 @@ class InitDriver():
             self.driver = webdriver.Chrome(ChromeDriverManager().install())
         elif browser == "firefox":
             self.driver = webdriver.Firefox(GeckoDriverManager().install())
+        return self.driver

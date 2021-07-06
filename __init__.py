@@ -6,14 +6,24 @@ from selenium.webdriver.firefox.options import Options
 
 class InitDriver():
     def __init__(self, browser="chrome", options=[]):
+        """
+        browser : str
+        define which browser you use.
+
+        options : list
+        driver options.
+        e.g)download directory
+        """
         driver_options = Options()
         for opt in options:
             driver_options.add_argument(opt)
+
         if browser == "chrome":
             self.driver = webdriver.Chrome(
                 ChromeDriverManager().install(),
                 options=driver_options
             )
+        
         elif browser == "firefox":
             self.driver = webdriver.Firefox(
                 GeckoDriverManager().install(),

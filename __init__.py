@@ -12,7 +12,7 @@ class InitDriver():
 
         options : list
         driver options.
-        e.g)download directory
+        e.g) download directory
         """
         driver_options = Options()
         for opt in options:
@@ -29,4 +29,5 @@ class InitDriver():
                 GeckoDriverManager().install(),
                 options=driver_options
             )
+
         return self.driver
